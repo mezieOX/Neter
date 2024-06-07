@@ -125,6 +125,43 @@ export const TwoFactorInputComp = ({
   );
 };
 
+export const SearchInputComp = ({
+  placeholder,
+  onChange,
+}: {
+  placeholder: string;
+  onChange?: (e: NativeSyntheticEvent<TextInputChangeEventData>) => void;
+}) => {
+  const {theme} = useContext(ThemeContext);
+
+  return (
+    <View style={tw`my-2`}>
+      <View
+        style={[
+          tw`h-10 pl-4 flex-row items-center justify-between py-1 border min-w-full`,
+          styles.searchInput,
+          {
+            borderColor:
+              theme === 'light' ? LightScheme.iconColor : DarkScheme.iconColor,
+          },
+        ]}>
+        <Image
+          style={tw`h-4 w-4`}
+          source={require('../../../assets/images/search.png')}
+        />
+        <TextInput
+          onChange={onChange}
+          style={tw`flex-1 mx-2 text-sm text-black h-10`}
+          placeholderTextColor={
+            theme === 'light' ? LightScheme.iconColor : DarkScheme.iconColor
+          }
+          placeholder={placeholder}
+        />
+      </View>
+    </View>
+  );
+};
+
 const styles = StyleSheet.create({
   label: {
     color: '#fff',

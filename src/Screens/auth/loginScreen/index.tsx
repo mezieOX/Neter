@@ -71,7 +71,12 @@ export const LoginScreen = () => {
           Forgot Password?
         </Text>
         <View style={tw`pt-10`}>
-          <Button onPress={() => {}} title={'Login'} />
+          <Button
+            onPress={() =>
+              navigation.navigate('BottomStack', {screen: 'HomeScreen'})
+            }
+            title={'Login'}
+          />
           <Text
             style={[
               tw`text-sm pt-8 text-center`,

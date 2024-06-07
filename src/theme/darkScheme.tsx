@@ -8,4 +8,6 @@ export const DarkScheme = {
   green: '#0A352C',
   lightGray: '#fff',
   lighterGray: '#fff',
+  iconColor: '#fff',
+  borderColor: '#898A8D',
 };
