@@ -52,13 +52,20 @@ export const WalletCardDetails: React.FC<IActive | any> = ({setActive}) => {
           wallet={true}
         />
         <View style={tw`self-end flex-row items-center`}>
-          <Text>Use as default card</Text>
+          <Text
+            style={[
+              tw``,
+              {
+                color: theme === 'light' ? LightScheme.title : DarkScheme.title,
+              },
+            ]}>
+            Use as default card
+          </Text>
           <TouchableOpacity
             onPress={() => setChecked(prev => !prev)}
             style={[
               tw`h-5 w-5 border flex items-center justify-center ml-4`,
               {
-                backgroundColor: '#fff',
                 borderColor:
                   theme === 'light' ? LightScheme.title : DarkScheme.title,
               },

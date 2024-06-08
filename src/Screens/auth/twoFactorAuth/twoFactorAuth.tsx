@@ -54,8 +54,8 @@ export const TwoFactorAuth = () => {
             onPress={() => {
               setIsActive(true);
               if (active === true) {
-                navigation.navigate('AuthStack', {
-                  screen: 'VerificationScreen',
+                navigation.navigate('BottomStack', {
+                  screen: 'HomeScreen',
                 });
               }
             }}
