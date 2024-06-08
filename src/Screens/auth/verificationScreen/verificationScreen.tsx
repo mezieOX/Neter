@@ -5,7 +5,7 @@ import {INavigationSetting} from '../../../navigation/type';
 import {useNavigation} from '@react-navigation/native';
 import {ThemeContext} from '../../../../App';
 import {DarkScheme, LightScheme} from '../..';
-import {Button} from '../../../components/components';
+import {Button} from '../../../components';
 
 export const VerificationScreen = () => {
   const navigation = useNavigation<INavigationSetting>();

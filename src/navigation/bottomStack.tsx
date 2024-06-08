@@ -4,11 +4,24 @@ import {CommonActions} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import {HomeIcon} from '../../assets/svgIcons/home-icon';
-import {DarkScheme, HomeScreen, LightScheme} from '../Screens';
+import {DarkScheme, HomeScreen, LightScheme, TradeScreen} from '../Screens';
 import {ThemeContext} from '../../App';
+import {
+  MarketsIcon,
+  NftIcon,
+  TradeIcon,
+  WalletIcon,
+} from '../../assets/svgIcons';
+import {MarketsScreen} from '../Screens/marketsScreen/marketsScreen';
+import {WalletScreen} from '../Screens/walletScreen/walletScreen';
+import {NftScreen} from '../Screens/nftScreen/nftScreen';
 
 export type BottomStackParams = {
   HomeScreen: undefined;
+  TradeScreen: undefined;
+  MarketsScreen: undefined;
+  WalletScreen: undefined;
+  NFTScreen: undefined;
 };
 
 const Tab = createBottomTabNavigator<BottomStackParams>();
@@ -17,6 +30,10 @@ const BottomTabStack = () => {
   const {theme} = React.useContext(ThemeContext);
 
   const homeIcon = (focused: boolean) => <HomeIcon isActive={focused} />;
+  const tradeIcon = (focused: boolean) => <TradeIcon isActive={focused} />;
+  const marketsIcon = (focused: boolean) => <MarketsIcon isActive={focused} />;
+  const walletIcon = (focused: boolean) => <WalletIcon isActive={focused} />;
+  const NFTIcon = (focused: boolean) => <NftIcon isActive={focused} />;
 
   return (
     <Tab.Navigator
@@ -89,6 +106,42 @@ const BottomTabStack = () => {
           unmountOnBlur: true,
           tabBarIcon: ({focused}) => homeIcon(focused),
           tabBarLabel: 'Home',
+        }}
+      />
+      <Tab.Screen
+        name="MarketsScreen"
+        component={MarketsScreen}
+        options={{
+          unmountOnBlur: true,
+          tabBarIcon: ({focused}) => marketsIcon(focused),
+          tabBarLabel: 'Markets',
+        }}
+      />
+      <Tab.Screen
+        name="TradeScreen"
+        component={TradeScreen}
+        options={{
+          unmountOnBlur: true,
+          tabBarIcon: ({focused}) => tradeIcon(focused),
+          tabBarLabel: 'Trade',
+        }}
+      />
+      <Tab.Screen
+        name="WalletScreen"
+        component={WalletScreen}
+        options={{
+          unmountOnBlur: true,
+          tabBarIcon: ({focused}) => walletIcon(focused),
+          tabBarLabel: 'Wallet',
+        }}
+      />
+      <Tab.Screen
+        name="NFTScreen"
+        component={NftScreen}
+        options={{
+          unmountOnBlur: true,
+          tabBarIcon: ({focused}) => NFTIcon(focused),
+          tabBarLabel: 'NFT',
         }}
       />
     </Tab.Navigator>

@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {Text, View, Image} from 'react-native';
 import {s as tw} from 'react-native-wind';
-import {Button} from '../../../components/components';
+import {Button} from '../../../components';
 import {DarkScheme, LightScheme} from '../..';
 import {ThemeContext} from '../../../../App';
 import {INavigationSetting} from '../../../navigation/type';

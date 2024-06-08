@@ -5,4 +5,6 @@ export {VerificationConfirmScreen} from './auth/verificationScreen/verificationC
 export {RegisterScreen} from './auth/registerScreen/index';
 export {TwoFactorAuth} from './auth/twoFactorAuth/twoFactorAuth';
 export {HomeScreen} from './homeScreen/homeScreen';
+export {TradeScreen} from './tradeScreen/tradeScreen';
+export {CryptoSellAndSwap} from './cryptoSellAndSwap/cryptoSellAndSwap';
 export * from '../theme/index';

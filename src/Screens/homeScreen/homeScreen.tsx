@@ -17,7 +17,7 @@ import {
   SavingIcon,
   SupportIcon,
 } from '../../../assets/svgIcons';
-import {Button, SearchInputComp} from '../../components/components';
+import {Button, SearchInputComp} from '../../components';
 
 const ListItems = [
   {id: 1, title: 'Bybit Earn', icon: BybitIcon},
@@ -137,7 +137,7 @@ export const HomeScreen = () => {
           ]}>
           {ListItems.map(({id, title, icon: Icon}) => (
             <View
-              style={tw`text-center flex-column justify-center items-center py-6`}
+              style={tw`text-center flex-column justify-center items-center py-6 min-w-1/5`}
               key={id}>
               <Icon />
               <Text

@@ -11,8 +11,8 @@ import {
   View,
 } from 'react-native';
 import {s as tw} from 'react-native-wind';
-import {ThemeContext} from '../../../App';
-import {DarkScheme, LightScheme} from '../../theme';
+import {ThemeContext} from '../../App';
+import {DarkScheme, LightScheme} from '../theme';
 
 export const TextInputComp = ({
   icon,
@@ -74,7 +74,7 @@ export const PasswordInputComp = ({
         {isEyeOpen ? (
           <TouchableWithoutFeedback onPress={() => setIsEyeOpen(prev => !prev)}>
             <Image
-              source={require('../../../assets/images/eye.png')}
+              source={require('../../assets/images/eye.png')}
               style={tw`h-5 w-5 mx-2`}
               resizeMode="contain"
             />
@@ -82,7 +82,7 @@ export const PasswordInputComp = ({
         ) : (
           <TouchableWithoutFeedback onPress={() => setIsEyeOpen(prev => !prev)}>
             <Image
-              source={require('../../../assets/images/eye-close.png')}
+              source={require('../../assets/images/eye-close.png')}
               style={tw`h-5 w-5 mx-2`}
               resizeMode="contain"
             />
@@ -97,15 +97,29 @@ export const TwoFactorInputComp = ({
   label,
   placeholder,
   onChange,
+  wallet = false,
 }: {
   label?: string;
   placeholder: string;
   onChange?: (e: NativeSyntheticEvent<TextInputChangeEventData>) => void;
+  wallet?: boolean;
 }) => {
+  const {theme} = useContext(ThemeContext);
+
   return (
     <View style={tw`my-2`}>
       {label ? (
-        <Text style={[tw`py-2 text-xs uppercase text-white`, styles.label]}>
+        <Text
+          style={[
+            tw`py-2 text-xs uppercase text-white`,
+            styles.label,
+            {
+              color:
+                theme === 'light' && wallet
+                  ? LightScheme.title
+                  : DarkScheme.title,
+            },
+          ]}>
           {label}
         </Text>
       ) : null}
@@ -113,11 +127,17 @@ export const TwoFactorInputComp = ({
         style={[
           tw`h-14 pl-4 flex-row items-center justify-between py-1 border min-w-full`,
           styles.searchInput,
+          {
+            borderColor:
+              wallet && theme === 'light'
+                ? LightScheme.iconColor
+                : DarkScheme.iconColor,
+          },
         ]}>
         <TextInput
           onChange={onChange}
-          style={tw`flex-1 mx-2 text-sm text-white py-4`}
-          placeholderTextColor={'#fff'}
+          style={tw`flex-1 mx-2 h-14 text-sm text-white py-4`}
+          placeholderTextColor={theme === 'light' && wallet ? '#000' : '#fff'}
           placeholder={placeholder}
         />
       </View>
@@ -147,7 +167,7 @@ export const SearchInputComp = ({
         ]}>
         <Image
           style={tw`h-4 w-4`}
-          source={require('../../../assets/images/search.png')}
+          source={require('../../assets/images/search.png')}
         />
         <TextInput
           onChange={onChange}

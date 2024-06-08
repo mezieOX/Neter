@@ -5,7 +5,7 @@ import {s as tw} from 'react-native-wind';
 import {INavigationSetting} from '../../../navigation/type';
 import {useNavigation} from '@react-navigation/native';
 import {DarkScheme, LightScheme} from '../..';
-import {Button, TextInputComp} from '../../../components/components';
+import {Button, TextInputComp} from '../../../components';
 
 export const LoginScreen = () => {
   const navigation = useNavigation<INavigationSetting>();

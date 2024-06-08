@@ -2,7 +2,7 @@ import React, {useContext, useState} from 'react';
 import {Image, ImageBackground, ScrollView, Text, View} from 'react-native';
 import {s as tw} from 'react-native-wind';
 import {DarkScheme, LightScheme} from '../..';
-import {Button, TwoFactorInputComp} from '../../../components/components';
+import {Button, TwoFactorInputComp} from '../../../components';
 import {ThemeContext} from '../../../../App';
 import {useNavigation} from '@react-navigation/native';
 import {INavigationSetting} from '../../../navigation/type';
