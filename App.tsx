@@ -22,9 +22,9 @@ const App = () => {
   return (
     <ThemeContext.Provider value={{theme, toggleTheme}}>
       <NavigationContainer ref={navigationRef}>
-        <TouchableOpacity onPress={toggleTheme}>
+        {/* <TouchableOpacity onPress={toggleTheme}>
           <Text style={tw``}>Mode: {theme}</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <RootNavigator />
       </NavigationContainer>
     </ThemeContext.Provider>

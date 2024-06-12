@@ -17,16 +17,20 @@ import {DarkScheme, LightScheme} from '../theme';
 export const TextInputComp = ({
   icon,
   placeholder,
+  support = false,
 }: {
   icon?: ImageSourcePropType;
   placeholder: string;
+  support?: boolean;
 }) => {
   const {theme} = useContext(ThemeContext);
 
   return (
     <View
       style={[
-        tw`my-2 border-b flex-row items-center`,
+        tw`my-2 ${
+          support ? 'border rounded-lg' : 'border-b '
+        }  flex-row items-center`,
         {
           borderColor:
             theme === 'light' ? LightScheme.border : DarkScheme.border,
@@ -178,6 +182,42 @@ export const SearchInputComp = ({
           placeholder={placeholder}
         />
       </View>
+    </View>
+  );
+};
+
+export const TextAreaInputComp = ({
+  label,
+  placeholder,
+  support,
+}: {
+  label?: string;
+  placeholder: string;
+  support?: boolean;
+}) => {
+  return (
+    <View style={tw`my-2`}>
+      {label ? (
+        <Text
+          style={[tw`py-2 text-xs mb-3 uppercase text-black`, styles.label]}>
+          {label}
+        </Text>
+      ) : null}
+      <TextInput
+        multiline={true}
+        numberOfLines={10}
+        placeholder={placeholder}
+        style={[
+          tw`bg-gray-100 h-16 px-4 py-4 rounded-lg border-2 min-w-full`,
+          styles.input,
+          {
+            height: support ? 150 : 250,
+            textAlignVertical: 'top',
+            backgroundColor: 'transparent',
+            borderColor: 'rgba(0, 0, 0, 0.11)',
+          },
+        ]}
+      />
     </View>
   );
 };
