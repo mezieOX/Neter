@@ -19,6 +19,7 @@ export const LightScheme = {
   blackGray: '#9DA3BA',
   gray100: '#FCFCFE',
   gray200: '#808080',
+  gray500: 'rgba(216, 217, 220, 0.25)',
   blue100: 'rgba(21, 169, 234, 0.2)',
   gray300: 'rgba(128, 128, 128, 0.25)',
   dark200: 'rgba(157, 163, 186, 1)',

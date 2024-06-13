@@ -38,8 +38,8 @@ const ListItems = [
     icon: InviteIcon,
     link: 'InviteFriendsScreen',
   },
-  {id: 5, title: 'TradingBot', icon: BotIcon},
-  {id: 6, title: 'Saving', icon: SavingIcon},
+  {id: 5, title: 'TradingBot', icon: BotIcon, link: 'TradingBotScreen'},
+  {id: 6, title: 'Saving', icon: SavingIcon, link: 'SavingScreen'},
   {id: 7, title: 'P2P Trading', icon: P2PIcon},
   {id: 8, title: 'More', icon: MoreIcon},
 ];
@@ -207,6 +207,7 @@ export const HomeScreen = () => {
             </Text>
             <View style={tw`flex-row items-center`}>
               <Text
+                onPress={() => navigation.navigate('DerivativesScreen')}
                 style={[
                   tw``,
                   {

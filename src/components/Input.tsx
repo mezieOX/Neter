@@ -18,10 +18,12 @@ export const TextInputComp = ({
   icon,
   placeholder,
   support = false,
+  fill = false,
 }: {
   icon?: ImageSourcePropType;
   placeholder: string;
   support?: boolean;
+  fill?: boolean;
 }) => {
   const {theme} = useContext(ThemeContext);
 
@@ -33,7 +35,7 @@ export const TextInputComp = ({
         }  flex-row items-center`,
         {
           borderColor:
-            theme === 'light' ? LightScheme.border : DarkScheme.border,
+            theme === 'light' && !fill ? LightScheme.border : DarkScheme.border,
         },
       ]}>
       {icon ? <Image style={tw`h-5 w-5`} source={icon} /> : null}
@@ -45,6 +47,7 @@ export const TextInputComp = ({
         style={[
           tw`h-14 px-4 rounded-lg placeholder:text-red-500 outline-0  min-w-full`,
           {
+            backgroundColor: fill ? LightScheme.gray500 : DarkScheme.title,
             color:
               theme === 'light' ? LightScheme.inputText : DarkScheme.inputText,
           },

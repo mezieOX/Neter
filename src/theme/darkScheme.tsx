@@ -18,6 +18,7 @@ export const DarkScheme = {
   blackGray: '#9DA3BA',
   gray100: '#FCFCFE',
   gray200: '#808080',
+  gray500: 'rgba(216, 217, 220, 0.25)',
   blue100: 'rgba(21, 169, 234, 0.2)',
   dark100: 'rgba(16, 29, 43, 1)',
   dark200: 'rgba(157, 163, 186, 1)',

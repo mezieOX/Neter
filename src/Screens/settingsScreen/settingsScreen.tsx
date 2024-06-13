@@ -1,12 +1,5 @@
 import React, {useContext} from 'react';
-import {
-  Image,
-  ScrollView,
-  Switch,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {ScrollView, Switch, Text, TouchableOpacity, View} from 'react-native';
 import {s as tw} from 'react-native-wind';
 import {ThemeContext} from '../../../App';
 import {DarkScheme, LightScheme} from '..';
@@ -42,6 +35,7 @@ export const SettingsScreen = () => {
       id: 5,
       text: 'Language',
       icon: TranslatorIcon,
+      link: 'ChangeLanguageScreen',
     },
   ];
 

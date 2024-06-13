@@ -31,6 +31,7 @@ export const ProfileScreen = () => {
       id: 1,
       text: 'Transaction history',
       icon: ArrowCircleDownIcon,
+      link: 'TransactionScreen',
     },
     {
       id: 2,
@@ -79,7 +80,7 @@ export const ProfileScreen = () => {
             style={[
               tw`text-black text-xl font-bold`,
               {
-                color: theme === 'light' ? LightScheme.title : DarkScheme.ttile,
+                color: theme === 'light' ? LightScheme.title : DarkScheme.title,
               },
             ]}>
             Hi, Amalia
